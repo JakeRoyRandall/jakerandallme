@@ -23,13 +23,13 @@ export default function Home() {
   return (
     <main className="flex justify-center min-h-screen max-h-screen min-w-screen max-w-screen text-white cursor-custom overflow-hidden" style={{ backgroundColor: COLORS[colorIndex] }}onMouseMove={colorChange}>
       <div className="flex flex-col items-center w-[80%] max-w-[1400px] my-16 lg:my-20">
-        <h1 className="w-full text-[12vw] sm:text-[9vw] lg:text-[8vh] 2xl:text-[8.33vh] mb-12 lg:mb-20">hi i'm jake!</h1>
+        <h1 className="w-full text-[12vw] sm:text-[9vw] lg:text-[8vh] 2xl:text-[8.33vh] mb-12 lg:mb-20">hi i&apos;m jake!</h1>
         <div className="w-full mb-12 lg:mb-20 leading-snug">
-          I'm a full stack dev <span role="img" aria-label="man technologist">👨‍💻 </span>
+          I&apos;m a full stack dev <span role="img" aria-label="man technologist">👨‍💻 </span>
           building fun & functional experiences using modern technologies including: { TECHS[techIndex] }
         </div>
         <div className="w-full mb-12 lg:mb-20 leading-snug">
-          In my free time I'm making a horde-survival game staring a goblin <span role="img" aria-label="frog emoji">🐸 </span> hero & an evil wizard 
+          In my free time I&apos;m making a horde-survival game staring a goblin <span role="img" aria-label="frog emoji">🐸 </span> hero & an evil wizard 
           <span role="img" aria-label="Man Mage emoji">🧙‍♂️</span>
         </div>
         <div className="w-full mb-12 lg:mb-20">
