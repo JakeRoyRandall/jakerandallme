@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { COLORS, TECHS, LOVES } from '@/data'
 import { RoughNotation } from 'react-rough-notation'
-import { Modal, ModalPortal, ModalOverlay, ModalClose, ModalTrigger, ModalContent, ModalHeader, ModalFooter, ModalTitle, ModalDescription } from "@/ModalPrimatives"
+import ProjectModal from '@/ProjectModal'
 
 export default function Home() {
   const [colorIndex, setColorIndex] = useState(0)
@@ -42,7 +42,7 @@ export default function Home() {
           <HoverLine text="Get In Touch! " href="mailto:hello@jakerandall.me?subject=Website%20Contact" label="envelope" emoji="💌"/>
         </div>
         <div className="hidden lg:flex flex-row justify-between w-full">
-          <ProjectModal />
+          <ProjectModal color={COLORS[colorIndex]}/>
           <HoverText name="github" href="https://github.com/JakeRoyRandall" />
           <HoverText name="linkedIn" href="https://www.linkedin.com/in/jake-r-randall" />
           <HoverText name="resume" href="./JakeRandallResume.pdf" />
@@ -50,59 +50,6 @@ export default function Home() {
         </div>
       </div>
     </main>
-  )
-}
-
-const ProjectModal = () => {
-  const [show, setShow] = useState(false)
-
-  const handleMouseOver = () => {
-    setShow(true)
-  }
-
-  return (
-    <Modal>
-      <ModalTrigger>
-        <span onMouseOver={() => handleMouseOver()} onMouseLeave={() => setShow(false)}>
-          <RoughNotation type={"box"} animationDuration={1200} strokeWidth={4} show={show}>
-            projects
-          </RoughNotation>
-        </span>
-      </ModalTrigger>
-      <ModalContent className="bg-white sm:max-w-[425px]">
-        <ModalHeader>
-          <ModalTitle>Edit profile</ModalTitle>
-          <ModalDescription>
-            Make changes to your profile here. Click save when you're done.
-          </ModalDescription>
-        </ModalHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
-            {/* <Label htmlFor="name" className="text-right">
-              Name
-            </Label>
-            <Input
-              id="name"
-              defaultValue="Pedro Duarte"
-              className="col-span-3"
-            /> */}
-          </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            {/* <Label htmlFor="username" className="text-right">
-              Username
-            </Label>
-            <Input
-              id="username"
-              defaultValue="@peduarte"
-              className="col-span-3"
-            /> */}
-          </div>
-        </div>
-        <ModalFooter>
-          <button type="submit">Save changes</button>
-        </ModalFooter>
-      </ModalContent>
-    </Modal>
   )
 }
 
